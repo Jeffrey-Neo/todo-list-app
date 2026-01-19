@@ -1,0 +1,256 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("Just.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background 0.3s ease;
+}
+
+/* ===== WRAPPER ===== */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    width: 380px;
+    padding: 25px;
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.15); /* transparent */
+    backdrop-filter: blur(15px);          /* glass effect */
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    animation: fadeIn 0.4s ease-in;
+}
+
+/* ===== TITLE ===== */
+.container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* ===== COUNTER ===== */
+.counter {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* ===== SEARCH ===== */
+.search {
+    width: 100%;
+    padding: 9px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+/* ===== INPUT BOX ===== */
+.input-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.input-box input,
+.input-box select {
+    flex: 1;
+    padding: 9px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.input-box button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #667eea;
+    color: white;
+    font-weight: bold;
+}
+
+.input-box button:hover {
+    background: #5a67d8;
+}
+
+/* ===== TODO LIST ===== */
+.todo-list {
+    list-style: none;
+}
+
+.todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #f4f4f4;
+
+    animation: slideUp 0.3s ease;
+}
+
+/* ===== COMPLETED ===== */
+.todo-list li.completed {
+    opacity: 0.6;
+}
+
+.todo-list li.completed span {
+    text-decoration: line-through;
+}
+
+/* ===== PRIORITY ===== */
+.low {
+    border-left: 5px solid #28a745;
+}
+
+.medium {
+    border-left: 5px solid #ffc107;
+}
+
+.high {
+    border-left: 5px solid #dc3545;
+}
+
+/* ===== DELETE BUTTON ===== */
+.delete {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: crimson;
+}
+
+/* ===== CLEAR BUTTON ===== */
+.clear-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: crimson;
+    color: white;
+}
+
+.clear-btn:hover {
+    background: darkred;
+}
+
+/* ===== DARK MODE BUTTON ===== */
+.dark-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;       /* circular button */
+    border: none;
+    cursor: pointer;
+
+    background: #333;         /* button color */
+    color: #fff;              /* text/icon color */
+    font-size: 24px;          /* make the 🌙 bigger */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.dark-btn:hover {
+    background: #555;
+    transform: scale(1.1);
+}
+
+.dark-btn:hover {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+
+/* ===== DARK MODE ===== */
+body.dark {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("Just.jpg");
+}
+
+body.dark .container {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+body.dark h1,
+body.dark .counter {
+    color: #ddd;
+}
+
+body.dark input,
+body.dark select {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+body.dark .todo-list li {
+    background: #2a2a2a;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 420px) {
+    .container {
+        width: 95%;
+    }
+}
+
+

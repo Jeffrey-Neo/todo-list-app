@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <div class="wrapper">
+        <div class="container">
+            <h1>My To-Do List</h1>
+
+            <p class="counter">
+                Total: <span id="totalTasks">0</span> |
+                Completed: <span id="completedTasks">0</span>
+            </p>
+            
+            <input type="text" id="searchInput" placeholder="Search tasks..." class="search">
+
+            <div class="input-box">
+                <input type="text" id="taskInput" placeholder="add a new task...">
+                <input type="date" id="dueDate">
+                <select id="priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <button id="addBtn">Add</button>
+            </div>
+
+            <ul class="todo-list" id="todoList"></ul>
+            <button id="clearAll" class="clear-btn">Clear All</button>
+        </div>
+    </div>
+
+    <button id="darkModeToggle" class="dark-btn">🌙</button>
+
+    <script src="script.js"></script>
+     
+</body>
+</html>
